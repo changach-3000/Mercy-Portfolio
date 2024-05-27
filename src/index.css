@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,9 +11,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#header {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.blob {
+  position: absolute;
+  width: 40rem;
+  height: 35rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5ecf26b), to(#fbf1fa));
+  background-image: linear-gradient(180deg, rgba(5, 1, 4, 0.42), #d3abbe);
+  mix-blend-mode: overlay;
+  left: 23%; /* Adjust this value to center the blob horizontally */
+  top: 50%; /* Adjust this value to center the blob vertically */
+  transform: translate(-50%, -50%);
+  border-radius: 76% 24% 33% 67% / 24% 76% 35% 65%; /* Set the final border-radius value */
+  animation: moveBlob 3s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes moveBlob {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -60%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* styles.css */
+.background-image {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.75;
+  backdrop-filter: blur(10px); /* Adjust blur as needed */
 }
